@@ -1,0 +1,195 @@
+* {
+    background-color: black;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    transition: all 0.3s ease;
+    background-image: url(bakground.jpg);
+    background-attachment: fixed;
+}
+
+span, h4 {
+    color: white;
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+.logo-image {
+    border-radius: 25px;
+    max-width: 150px;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s ease;
+    transition: all 0.3s ease-out;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem; /* Adjust as needed */
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+    transition: all 0.3s ease-in;
+    min-height: 100vh; /* Make the header take at least the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align the content to the top */
+}
+
+.container h1 {
+    text-align: right;
+}
+
+.container h4 {
+    font-size: 60px;
+}
+
+.container span {
+    font-size: 30px;
+    color: #7510f1;
+}
+
+.content {
+    text-align: right;
+    margin-top: 20vh; /* Add margin to push content down slightly, adjust as needed */
+}
+
+.header {
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+header .content h4 {
+    margin-bottom: 1rem;
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header .content h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+header .content h1 span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+header .content p {
+    margin-bottom: 2%;
+}
+
+.aboutUss {
+    color: white;
+    padding: 2rem; /* Add padding to create more space around the section */
+}
+
+.w2png img {
+    width: 120%;  /* This will make the image take up 100% of its container's width */
+    max-width: 300px;  /* You can adjust this value to control the maximum size of the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+    width: 50%;
+}
+.aboutUss p{
+    display: flex;
+    font-size: 2rem;
+    flex: 1; 
+    text-align: right;
+}
+.aboutUss h1{
+    font-size: 2rem;
+}
+
+
+/* Cursor animation */
+.cursor {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+    vertical-align: middle; /* Align the cursor with text */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide navbar by default on small screens */
+        flex-direction: column;
+        width: 100%; /* Make the navbar take full width on small screens */
+        align-items: flex-start;
+        gap: 1rem;
+        background-color: black; /* Ensure background matches */
+        padding: 1rem;
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+/* Default hamburger icon hidden */
+.hamburger {
+    display: none;
+}
+
+/* Ensuring the header stays in row direction on all screens */
+.header {
+    flex-direction: row;
+}
